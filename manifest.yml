@@ -1,0 +1,11 @@
+applications:
+- name: tesseract-eng
+  path: target/tesseract-on-cf-0.0.1-SNAPSHOT.jar
+  buildpack: java_buildpack
+  env:
+    tessdata.lang: eng
+- name: tesseract-jpn
+  path: target/tesseract-on-cf-0.0.1-SNAPSHOT.jar
+  buildpack: java_buildpack
+  env:
+    tessdata.lang: jpn

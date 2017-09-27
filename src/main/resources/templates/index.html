@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>OCR</title>
+</head>
+<body>
+
+<h1>OCR</h1>
+<form enctype="multipart/form-data" method="post" th:action="@{/}">
+    <input type="file" name="file"/>
+    <input type="submit"/>
+</form>
+
+<textarea th:if="${string != null}" th:text="${string}" cols="100" rows="30"></textarea>
+</body>
+</html>
