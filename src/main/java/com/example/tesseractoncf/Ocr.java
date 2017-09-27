@@ -49,7 +49,7 @@ public class Ocr {
     @PreDestroy
     void cleanup() {
         log.debug("Cleanup TessBaseAPI.");
-        api.End();
+        this.api.End();
     }
 
 }
