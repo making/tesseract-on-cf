@@ -7,15 +7,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-
 @Controller
 public class UploadController {
-    private final TmpFile tmpFile;
     private final Ocr ocr;
 
-    public UploadController(TmpFile tmpFile, Ocr ocr) {
-        this.tmpFile = tmpFile;
+    public UploadController(Ocr ocr) {
         this.ocr = ocr;
     }
 
@@ -26,8 +22,7 @@ public class UploadController {
 
     @PostMapping("/")
     public String ocr(@RequestParam MultipartFile file, Model model) {
-        File tmp = this.tmpFile.write(file).asFile();
-        String string = this.ocr.read(tmp);
+        String string = this.ocr.read(file);
         model.addAttribute("string", string);
         return "index";
     }
