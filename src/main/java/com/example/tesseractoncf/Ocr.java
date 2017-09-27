@@ -16,7 +16,7 @@ import java.io.File;
 @Component
 @RequestScope
 public class Ocr {
-    private final Logger log = LoggerFactory.getLogger(Ocr.class);
+    private static final Logger log = LoggerFactory.getLogger(Ocr.class);
     private final tesseract.TessBaseAPI api;
     private final TmpFile tmpFile;
 

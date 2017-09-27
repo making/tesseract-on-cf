@@ -14,7 +14,7 @@ import java.io.UncheckedIOException;
 @Component
 @RequestScope
 public class TmpFile {
-    private final Logger log = LoggerFactory.getLogger(TmpFile.class);
+    private static final Logger log = LoggerFactory.getLogger(TmpFile.class);
     private final File file;
 
     public TmpFile() {
